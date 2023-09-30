@@ -1,0 +1,31 @@
+import random
+
+def pull_lever():
+    return [random.choice(["🍒", "🍊", "🍇"]) for _ in range(3)]
+
+def display_slot(result):
+    print(" | ".join(result))
+
+def check_winning(result):
+    if len(set(result)) == 1:
+        return True
+    return False
+
+def play_slot_machine():
+    print("Welcome to the Slot Machine!")
+    credits = 10  # You start with 10 credits
+    while credits > 0:
+        input("Press Enter to pull the lever...")
+        result = pull_lever()
+        display_slot(result)
+        if check_winning(result):
+            print("Congratulations! You won!")
+            credits += 5
+        else:
+            print("Sorry, you didn't win.")
+            credits -= 1
+        print(f"Remaining credits: {credits}")
+    print("Game over. You're out of credits.")
+
+if __name__ == "__main__":
+    play_slot_machine()

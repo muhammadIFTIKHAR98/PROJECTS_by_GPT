@@ -1,0 +1,67 @@
+class Task:
+    def __init__(self, description):
+        self.description = description
+        self.is_complete = False
+
+    def mark_as_complete(self):
+        self.is_complete = True
+
+    def __str__(self):
+        status = "Complete" if self.is_complete else "Incomplete"
+        return f"{self.description} - {status}"
+
+task_list = []
+
+def main_menu():
+    while True:
+        print("\nTask Tracker Menu:")
+        print("1. Add Task")
+        print("2. View Tasks")
+        print("3. Mark Task as Complete")
+        print("4. Quit")
+
+        choice = input("Enter your choice (1/2/3/4): ")
+
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            view_tasks()
+        elif choice == "3":
+            mark_complete()
+        elif choice == "4":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main_menu()
+def add_task():
+    description = input("Enter task description: ")
+    task = Task(description)
+    task_list.append(task)
+    print(f"Task '{description}' added successfully.")
+
+def view_tasks():
+    if not task_list:
+        print("No tasks found.")
+    else:
+        print("\nTasks:")
+        for idx, task in enumerate(task_list, start=1):
+            print(f"{idx}. {task}")
+
+def mark_complete():
+    view_tasks()
+    choice = input("Enter the number of the task you want to mark as complete (or '0' to cancel): ")
+
+    if choice == "0":
+        return
+
+    try:
+        idx = int(choice) - 1
+        if 0 <= idx < len(task_list):
+            task_list[idx].mark_as_complete()
+            print(f"Task '{task_list[idx].description}' marked as complete.")
+        else:
+            print("Invalid task number.")
+    except ValueError:
+        print("Invalid input. Please enter a valid task number.")

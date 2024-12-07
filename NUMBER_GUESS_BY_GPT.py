@@ -1,5 +1,9 @@
 import random
+
+#thhis will select any number between 1 to 100
 number_to_guess = random.randint(1,100)
+
+#this will keep track for your attempts 
 attempts = 0
 while True:
     guess = int(input("Guess the number (1-100): "))

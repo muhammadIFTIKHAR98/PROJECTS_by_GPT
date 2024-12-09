@@ -1,8 +1,14 @@
+#This code will calculate the BODY MASS INDEX (BMI)
+
+#first we need input like Height and Weight of an individual.
 Height=float(input("Enter your height in centimeters: "))
 Weight=float(input("Enter your Weight in Kg: "))
+
 Height = Height/100
+#This is the Formula for BMI
 BMI=Weight/(Height*Height)
 print("your Body Mass Index is: ",BMI)
+#Now we will provide the if conditions for various BMI values
 if(BMI>0):
 	if(BMI<=16):
 		print("you are severely underweight")

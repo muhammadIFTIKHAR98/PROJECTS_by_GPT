@@ -1,9 +1,14 @@
+#This code is used to create a game which will guess the word chosen by code randomly from specified list of options.
+
 import random
 
+#step-1 create a function that will provide list of options from which the word will ebe selected by code randomly 
 def choose_random_word():
     word_list = ["apple", "banana", "cherry", "orange", "grape", "kiwi", "melon", "strawberry", "blueberry", "pineapple"]
     return random.choice(word_list)
 
+
+#step-2 create a function that will display the correct word guessed by you
 def display_word(word, guessed_letters):
     display = ""
     for letter in word:
@@ -13,6 +18,7 @@ def display_word(word, guessed_letters):
             display += "_"
     return display
 
+#step-3 create a function that will start the game and also provide the max_attempts that you can guess
 def play_game():
     print("Welcome to 'Word Guess'!")
     secret_word = choose_random_word()
@@ -44,3 +50,41 @@ def play_game():
 
 if __name__ == "__main__":
     play_game()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

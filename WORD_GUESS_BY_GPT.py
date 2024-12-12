@@ -48,6 +48,7 @@ def play_game():
     if max_attempts == 0:
         print(f"Game over! The word was '{secret_word}'.")
 
+# this where we will call the main function.
 if __name__ == "__main__":
     play_game()
 

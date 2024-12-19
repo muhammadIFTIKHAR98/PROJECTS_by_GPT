@@ -1,3 +1,5 @@
+#This code will generate a random maths problem 
+#this code can be simplified
 import random
 
 def generate_problem():

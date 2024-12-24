@@ -1,3 +1,6 @@
+#This code is copied from the chat GPT, need to understand the code properly.
+
+
 #install pygame
 import pygame
 import random

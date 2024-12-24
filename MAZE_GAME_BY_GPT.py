@@ -1,5 +1,8 @@
+#THIS IS THE CODE TO MAKE A MAZE GAME
+
 import random
 
+#step 1 - create a function which defines the maze
 def create_maze():
     maze = [
         [1, 0, 1, 1, 1],
@@ -10,6 +13,7 @@ def create_maze():
     ]
     return maze
 
+#step 2 - create a function which will print out the maze
 def print_maze(maze, player_row, player_col):
     for i in range(len(maze)):
         for j in range(len(maze[0])):
@@ -21,6 +25,7 @@ def print_maze(maze, player_row, player_col):
                 print(" ", end=" ")  # Open path
         print()
 
+#step 3 - function to move players
 def move_player(maze, player_row, player_col, move):
     new_row, new_col = player_row, player_col
 
@@ -38,6 +43,7 @@ def move_player(maze, player_row, player_col, move):
     else:
         return player_row, player_col
 
+#step 4 - Main function which will start the game
 def play_game():
     maze = create_maze()
     player_row, player_col = 0, 0
@@ -54,5 +60,6 @@ def play_game():
             print("Congratulations! You've reached the exit!")
             break
 
+#calling the function to run only when this actual file is running and not when it is imported somewhere else's code
 if __name__ == "__main__":
     play_game()
